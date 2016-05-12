@@ -474,7 +474,7 @@ footer p {
 }
 
 .largethumb-y {
-    max-height: 300px;
+    max-height: 200px;
 }
 
 .xlargethumb-y {
@@ -513,4 +513,15 @@ footer p {
     width: auto;
     margin: 0px auto;
     display:block;
+}
+
+/*****  Horizontal Align  ****/
+
+.centering {
+    float: none;
+    margin: 0 auto;
+}
+
+.float-left {
+    float: left;
 }
