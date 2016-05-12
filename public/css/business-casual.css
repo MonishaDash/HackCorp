@@ -198,3 +198,319 @@ footer p {
     width: 60%;
     margin: 0 auto;
 }
+
+/* Padding Adjustments -----------
+==================================*/
+.nopaddingall {
+    padding:0px 0px 0px 0px;
+}
+
+.minipaddingall {
+    padding:5px;
+}
+
+.smallpaddingall {
+    padding:10px;
+}
+
+.medpaddingall {
+    padding:20px;
+}
+
+.largepaddingall {
+    padding:30px;
+}
+
+.xlargepadding {
+    padding:50px;
+}
+
+/* LEFT Padding Adjustments------------*/
+.nopaddingleft {
+    padding-left:0;
+}
+
+.minipaddingleft {
+    padding-left:5px;
+}
+
+.smallpaddingleft {
+    padding-left:10px;
+}
+
+.medpaddingleft {
+    padding-left:20px;
+}
+
+.largepaddingleft {
+    padding-left:30px;
+}
+
+/* RIGHT Padding Adjustments------------*/
+.nopaddingright {
+    padding-right:0;
+}
+
+.minipaddingright {
+    padding-right:5px;
+}
+
+.smallpaddingright {
+    padding-right:10px;
+}
+
+.medpaddingright {
+    padding-right:20px;
+}
+
+.largepaddingright {
+    padding-right:30px;
+}
+
+/* TOP Padding Adjustments------------*/
+.nopaddingtop {
+    padding-top:0px;
+}
+
+.minipaddingtop {
+    padding-top:5px;
+}
+
+.smallpaddingtop {
+    padding-top:10px;
+}
+
+.medpaddingtop {
+    padding-top:20px;
+}
+
+.largepaddingtop {
+    padding-top:30px;
+}
+
+.xlargepaddingtop {
+    padding-top:80px;
+}
+
+/* BOTTOM Padding Adjustments------------*/
+.nopaddingbottom {
+    padding-bottom:0px;
+}
+
+.minipaddingbottom {
+    padding-bottom:5px;
+}
+
+.smallpaddingbottom {
+    padding-bottom:10px;
+}
+
+.medpaddingbottom {
+    padding-bottom:20px;
+}
+
+.largepaddingbottom {
+    padding-bottom:30px;
+}
+/* SIDES Padding Adjustments Special------------*/
+#header .navbar-nav.navbar-right >li a.nopaddingsides {
+    padding-right:0;
+    padding-left:0;
+}
+/* Margin Adjustments -----------
+==================================*/
+.nomarginall {
+    margin:0px 0px 0px 0px;
+}
+
+.minimarginall {
+    margin:5px;
+}
+
+.smallmarginall {
+    margin:10px;
+}
+
+.medmarginall {
+    margin:20px;
+}
+
+.largemarginall {
+    margin:30px;
+}
+
+/* LEFT margin Adjustments------------*/
+.nomarginleft {
+    margin-left:0;
+}
+
+.minimarginleft {
+    margin-left:5px;
+}
+
+.smallmarginleft {
+    margin-left:10px;
+}
+
+.medmarginleft {
+    margin-left:20px;
+}
+
+.largemarginleft {
+    margin-left:30px;
+}
+
+/* RIGHT margin Adjustments------------*/
+.nomarginright {
+    margin-right:0;
+}
+
+.minimarginright {
+    margin-right:5px;
+}
+
+.smallmarginright {
+    margin-right:10px;
+}
+
+.medmarginright {
+    margin-right:20px;
+}
+
+.largemarginright {
+    margin-right:30px;
+}
+
+/* TOP margin Adjustments------------*/
+.nomargintop {
+    margin-top:0px;
+}
+
+.minimargintop {
+    margin-top:5px;
+}
+
+.smallmargintop {
+    margin-top:10px;
+}
+
+.medmargintop {
+    margin-top:20px;
+}
+
+.largemargintop {
+    margin-top:30px;
+}
+
+.xlargemargintop {
+    margin-top:50px;
+}
+
+.xxlargepaddingtop {
+    padding-top: 140px;
+}
+
+.modalmargintop {
+    margin-top:200px;
+}
+
+/* BOTTOM margin Adjustments------------*/
+.nomarginbottom {
+    margin-bottom:0px;
+}
+
+.minimarginbottom {
+    margin-bottom:5px;
+}
+
+.smallmarginbottom {
+    margin-bottom:10px;
+}
+
+.medmarginbottom {
+    margin-bottom:20px;
+}
+
+.largemarginbottom {
+    margin-bottom: 30px;
+}
+
+.xlargemarginbottom {
+    margin-bottom: 200px;
+}
+
+.footermarginbottom {
+    margin-bottom:75px;
+}
+
+/*****  IMAGE RESIZE  ****/
+.thumb {
+    max-height:100px;
+}
+
+.smallthumb-x {
+    max-width: 100px;
+}
+
+
+.medthumb-x {
+    max-width: 155px;
+}
+
+.largethumb-x {
+    max-width: 300px;
+}
+
+.xlargethumb-x {
+    max-width: 2000px;
+}
+
+.smallthumb-y {
+    max-height: 100px;
+}
+
+.medthumb-y {
+    max-height: 155px;
+}
+
+.largethumb-y {
+    max-height: 300px;
+}
+
+.xlargethumb-y {
+    max-height: 2000px;
+}
+
+.smallthumb {
+    max-height:100px;
+    max-width: 100px;
+    height: auto;
+    width: auto;
+}
+
+.medthumb {
+    max-height:155px;
+    max-width: 155px;
+    height: auto;
+    width: auto;
+    margin: 0px auto;
+    display:block;
+}
+
+.largethumb {
+    max-height: 300px;
+    max-width: 300px;
+    height: 200px;
+    width: 200px;
+    margin: 0px auto;
+    display:block;
+}
+
+.xlargethumb {
+    max-height: 500px;
+    max-width: 500px;
+    height: auto;
+    width: auto;
+    margin: 0px auto;
+    display:block;
+}
