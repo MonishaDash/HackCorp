@@ -1,11 +1,9 @@
-/**
- * Created by Tech-team on 11/4/15.
- */
+
 /* Object/Relational mapping for instances of the Users class.
  - classes correspond to tables
  - instances correspond to rows
  - fields correspond to columns
- In other words, this code defines how a row in the postgres order table
+ In other words, this code defines how a row in the MySQL order table
  maps to the JS Order object.
  */
 var hash = require('../authentication/passencrypt').hash
@@ -78,8 +76,6 @@ module.exports = function(sequelize, DataTypes) {
                         _User.findOne({
                             where: {email: req.body.email}
                         }).then(function (user) {
-                            // project will be the first entry of the Projects table with the title 'aProject' || null
-                            // project.title will contain the name of the project
                             callback(user);
                         })
                     } else {

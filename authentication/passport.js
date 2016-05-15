@@ -2,10 +2,7 @@
  * Created by Carlos on 11/25/15.
  */
 var LocalStrategy = require('passport-local').Strategy
-    , FacebookStrategy = require('passport-facebook').Strategy
     , hash = require('../authentication/passencrypt').hash
-    , help = require('../helper/help.js')
-    , constants = require('../helper/constants');   // Including Helper Functions
 
 module.exports = function (passport, db) {
 

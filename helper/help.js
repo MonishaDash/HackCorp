@@ -5,7 +5,6 @@
     var constants = require('./constants')
     , https = require('https')              //Pretty multipart form maker
     , nodemailer = require('nodemailer')    // Send Emails within NodeJS using GMAIL and OAUTH
-    , fs = require('fs')
     , exif = require('exif-parser')
     , lwip = require('lwip');
 
@@ -183,96 +182,6 @@ exports.getSocialURLs = function(){
     };
 
     return social;
-};
-
-exports.fbConfig = function(){
-    var config;
-
-    config = {
-        client_id: process.env.FACEBOOK_APP_ID,
-        client_secret: process.env.FACEBOOK_APP_SECRET,
-        redirect_uri: constants.FACEBOOK_AUTHORIZATION_CALLBACK_URL,
-        scope: 'publish_actions',
-        grant_type: 'client_credentials'
-    };
-
-    return config;
-};
-
-exports.updatePostingInNote = function(id, callback){
-    global.db.Goodthing.updateFacebookPostingInNote(id, function(error, result){
-        if(error) {
-            console.log("Error Updating Facbook post: ",error);
-            callback(error, null);
-        } else {
-            callback(null, result);
-        }
-    });
-};
-
-exports.postToFacebook = function(id, access_token, fb, callback){
-    _This = this;
-
-    global.db.Goodthing.getLastNoteToPostToFacebook(id, function(error, note){
-        if(!error){
-            // Check what type of media
-            var mediaURL = note.media
-            mediaURL = mediaURL.substr(mediaURL.lastIndexOf('/') + 1);
-
-            // Prepare Message
-            var message = constants.SOCIAL_NETWORKS_MESSAGE+note.fullDesc;
-
-            if(mediaURL != "defaultMedia.jpg"){
-                if(note.mediaType == 'image') {
-                    // GTNote with Image
-                    fb.apiCall('POST', '/me/photos', {
-                            access_token: access_token,
-                            message: message,
-                            url: note.media
-                        },
-                        function (error, response, body) {
-                            if(body.error) console.log("Error Posting to Facebook: ",error);
-                            _This.updatePostingInNote(note.id, function(error, result){
-                                callback();
-                            });
-                        }
-                    );
-                } else {
-                    // GTNote with Video
-                    fb.apiCall('POST', '/me/videos', {
-                            access_token: access_token,
-                            description: message,
-                            file_url: note.media
-                        },
-                        function (error, response, body) {
-                            if(body.error) console.log("Error Posting to Facebook: ",error);
-
-                            _This.updatePostingInNote(note.id, function(error, result){
-                                callback();
-                            });
-                        }
-                    );
-                }
-            } else {
-                // GTNote Text Only
-                fb.apiCall('POST', '/me/feed', {
-                        access_token: access_token,
-                        message: message
-                    },
-                    function (error, response, body) {
-                        if(body.error) console.log("Error Posting to Facebook: ",error);
-
-                        _This.updatePostingInNote(note.id, function(error, result){
-                            callback();
-                        });
-                    }
-                );
-            }
-        } else {
-            console.log("Error finding last post in facebook");
-            callback();
-        }
-    });
 };
 
 exports.sendWelcomeMessage = function(email, callback){

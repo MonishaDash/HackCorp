@@ -53,21 +53,18 @@ for(var post in posts) {
     app.post(posts[post].path, posts[post].fn);
 }
 
-//db.User.drop(); console.log("User Tables DROPPED!!!!");
-
-var server;
-
 /* Start Server
  ================*/
+// Variable to Hold server reference
+var server;
+
 // Begin listening for HTTP requests to Express app
 global.db.sequelize.sync().then(function(err) {
 
     async.parallel([
         function () {
             // Begin listening for HTTP requests to Express app
-
-
-            server =http.createServer(app).listen(port, function () {
+            server = http.createServer(app).listen(port, function () {
                 //server = app.listen(port,function(){
                 console.log("Listening on " + port);
             });

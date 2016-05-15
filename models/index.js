@@ -1,18 +1,17 @@
 if (!global.hasOwnProperty('db')) {
     var Sequelize = require('sequelize');
     var sq = null;
-    var path = require('path');
 
     // DB Connection Variables
     var user, password, host, port, dbname;
 
     if (process.env.DATABASE_URL) { /!* Remote database... Normally Heroku PostgreSQL running on AWS *!/
-        console.log("We are on Heroku Database...");
+        console.log("We are on AWS Database...");
         console.log(process.env.DATABASE_URL);
 
         var pgregex = /mysql:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/;
         var match = process.env.DATABASE_URL.match(pgregex);
-        //console.log(match);
+
         user = match[1];
         console.log("user: ",user);
         password = match[2];
